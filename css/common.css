@@ -1,0 +1,55 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label{margin: 0; padding: 0; border: 0; vertical-align: baseline}
+body, div, span, iframe, p, blockquote, pre, a, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label{font-family: 'Open Sans', sans-serif !important;}
+html,body,.page-wrap {height: 100%;min-height: 100%;}
+a{text-decoration: none;}
+ul{list-style: none;}
+.hidden {  display: none; }
+.ui-widget input,input[type="text"],input[type="password"],.selectbox .handler {  height: 17px;}
+
+body{background-image: url(../images/bg.jpg);}
+.page-wrap{width: 95%;margin: 0 auto;background-color: #fff;}
+.page{border:13px solid #fff;border-width: 0 13px;overflow: hidden; background:#f3f3f3;}
+.header{height: 82px;}
+.header .logo{margin-left: 20px;margin-top: 16px;float: left;}
+.header .topnav{height: 76px;background-color: #01A982;color: #fff;width: 620px;border-radius:0 0 6px 6px;position: relative;float: right;}
+.header .topnav .navbar{border:2px solid #f7fdfe;border-bottom-left-radius: 6px;line-height: 29px;color: #fff;background-color: #000;overflow: hidden;border-top: none;float: right;}
+.header .topnav .navbar ul li{border-right: 1px solid #E0E0E0;float: left;}
+.header .topnav .navbar ul li a{color: #fff;padding: 0 10px;font-size: 12px;font-weight: bold;}
+.header .topnav .navbar ul li a:hover{text-decoration: underline;}
+.header .topnav .welcome{position: absolute;bottom: 5px;left: 10px;line-height: 21px;font-size: 21px;font-size: 14px;}
+.header .topnav .username,
+.header .topnav .timezone{padding: 0 20px;}
+.header .topnav .timezone{border-left: 1px solid #fff;}
+.header .topnav .timezone span{font-style: italic;}
+
+.nav{font-size: 13px;background-color: #000;box-shadow: 7px 7px #dfdfdf;border-radius: 4px;border:1px solid #69b;color: #fff;height: 34px;line-height: 34px;z-index: 1000;clear: both;}
+.nav li{border-right: 1px solid #E0E0E0;float: left;position: relative;}
+.nav li a{color: #fff;padding: 7px 18px 5px;}
+.nav .subnav .downicon{width: 11px;height: 8px;background: url(../images/down.gif);display: inline-block;}
+
+.page-content{margin: 0 27px 20px 27px;position: relative;}
+.titlebar{padding: 10px 0;border-bottom: 1px solid #ccc;margin-bottom: 19px;overflow: hidden;}
+.titlebar .title{line-height: 46px;color: #000;font-size: 37px;font-weight: 300;float: left;}
+.optbar{position: absolute;right: 0;top: 19px;overflow: hidden;line-height: 37px;color: #777;font-size: 10px;margin-right: 12px;}
+.pagecolumn{margin-left: 22px;}
+.pagecolumn a{display: inline-block;padding: 0 5px;color: #fff;font-weight: bold;line-height: 17px;background: #999;border-radius: 3px;cursor: pointer;}
+.pagecolumn a.on{background:#000;}
+
+.buttons{margin-left: 50px;}
+.buttonsty{background:#000;color: #fff;box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);display: inline-block;border-radius: 2px;padding: 0 18px;font-size: 15px;font-weight:bold;text-shadow:1px 1px 0px #000;line-height: 25px;vertical-align: middle;}
+.refreshbtn{width: 25px;height: 25px;background:#000 url(../images/refresh.png) center no-repeat;padding: 0;margin-left: 5px;}
+
+.ui-state-default{margin-bottom: 10px;}
+.ui-sortable-placeholder{border:3px dashed #aaa;}
+.ui-sortable-helper{opacity: .5;}
+
+.pannel{background: #fff;box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);color: #4f4f4f;}
+.pannel .pannel-title{border:2px solid #01A982; padding: 0 10px;line-height: 28px;overflow: hidden;position: relative;cursor: move;}
+.pannel .pannel-title a{font-size: 14px;color: #000;}
+.pannel .pannel-title a:hover{color: #A9D0F5;}
+.pannel .pannel-title .icons{position: absolute;right: 3px;top: 6px;}
+.pannel .pannel-title .icons .icon{width: 17px;height: 17px;background-color: #000;padding: 0;display: inline-block;border-radius: 3px;}
+.pannel .pannel-title .icons .minimize{background:#000 url(../images/min.png) center no-repeat;}
+.pannel .pannel-title .icons .close{background:#000 url(../images/close.png) center no-repeat;}
+.pannel-content{overflow: hidden;border:1px solid #ddd;border-top: 0;}
+.widget-empty{margin: 20px 5px 20px 20px;vertical-align: middle;font:italic 11px Helvetica, sans-serif;text-align: left;}
