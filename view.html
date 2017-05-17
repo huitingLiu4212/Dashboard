@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>HPE SMT DEMO</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Just+Another+Hand|Roboto:400,300,700|PT+Sans:400,700">
-	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fixedHeader.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="css/colReorder.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
@@ -92,14 +94,102 @@
 			</div>
 			<div class="content">
 				<div class="schpannel">
-					<div class="togger-btn"></div>
+					<div class="togger-btn">
+						<a href="#" class="buttonsty" id="toggerbtn"><span>SEARCH</span></a>
+					</div>
+					<div class="schcontent" id="schContent">
+						<form action="">
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Customer:</label>
+									<select name="" id="">
+										<option value="">All Customers</option>
+									</select>
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Location:</label>
+									<select name="" id="">
+										<option value="">All Site Locations</option>
+									</select>
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Shelf Location:</label>
+									<select name="" id="" class="control-left">
+										<option value="">contains</option>
+									</select>
+									<input type="text" class="control-right" value="">
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Model Number:</label>
+									<span class="tag">Begin typing, then select</span>
+									<select name="" id="">
+										<option value="">All Site Locations</option>
+									</select>
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Serial Number:</label>
+									<span class="tag">Begin typing, then select</span>
+									<select name="" id="">
+										<option value="">All Site Locations</option>
+									</select>
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Part Number:</label>
+									<select name="" id="" class="control-left">
+										<option value="">contains</option>
+									</select>
+									<input type="text" class="control-right" value="">
+								</div>
+							</div>
+							<div class="sch-column">
+								<div class="form-control">
+									<label>Description:</label>
+									<select name="" id="" class="control-left">
+										<option value="">contains</option>
+									</select>
+									<input type="text" class="control-right" value="">
+								</div>
+							</div>
+							<a href="#" class="addbtn">Add</a>
+							<a href="#" class="buttonsty sch-subbtn">Display</a>
+							<a href="#" class="exprotbtn">Export Data</a>
+						</form>
+					</div>
 				</div>
+				<p class="message">To sort the table, click the column header.</p>
+				<table id="sortable" class="sortable">
+					<thead>
+						<tr>
+							<th>CUSTOMER</th>
+							<th>LOCATION</th>
+							<th>SHELF LOCATION</th>
+							<th>PART NUMBER</th>
+							<th>TYPE</th>
+							<th>DESCRIPTION</th>
+							<th>QUANTITY</th>
+						</tr>
+					</thead>
+				</table>
 			</div>
 		</div>
 	</div>
 </div>
 
 
+<script src="./scripts/3rd/jquery.js" type="text/javascript"></script>
+<script src="./scripts/3rd/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="./scripts/3rd/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+<script src="./scripts/3rd/dataTables.colReorder.min.js" type="text/javascript"></script>
 <script src="./scripts/view.js" type="text/javascript"></script>
 </body>
 </html>

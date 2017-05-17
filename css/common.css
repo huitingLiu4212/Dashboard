@@ -23,7 +23,7 @@ body{background-image: url(../images/bg.jpg);}
 .header .topnav .timezone span{font-style: italic;}
 
 .nav{font-size: 13px;background-color: #000;box-shadow: 7px 7px #dfdfdf;border-radius: 4px;border:1px solid #69b;color: #fff;height: 34px;line-height: 34px;z-index: 1000;clear: both;}
-.nav li{border-right: 1px solid #E0E0E0;float: left;position: relative;}
+.nav li{border-right: 1px solid grey;float: left;position: relative;}
 .nav li a{color: #fff;padding: 7px 18px 5px;}
 .nav .subnav .downicon{width: 11px;height: 8px;background: url(../images/down.gif);display: inline-block;}
 .nav .subnav:hover ul{display: block;}
@@ -79,5 +79,23 @@ body{background-image: url(../images/bg.jpg);}
 .pannel-box-right li{height: 22px;line-height: 22px;}
 .pannel-box-right li input{vertical-align: middle;margin: 0;}
 
-.schpannel{}
+.schpannel .togger-btn{text-align: right;margin-bottom: 20px;}
+.schpannel .togger-btn .buttonsty{line-height: 21px;font-size: 10px;text-shadow:1px 1px 0px #023171;}
+.schpannel .togger-btn .buttonsty span{padding-right: 15px;background:url(../images/arr-up.png) right center no-repeat;}
+.schpannel .togger-btn .buttonsty.down span{background:url(../images/arr-down.png) right center no-repeat;}
+.schcontent{padding: 20px 23px 50px 23px;position: relative;overflow: hidden;background:#e6e7e7;border-top: 1px solid #ccc;font-size: 11px;font-weight: 300;}
+.sch-column{border-right: 1px solid #ddd;width: 180px;display: inline-block;padding: 0 10px;vertical-align: top;}
+.sch-subbtn{position: absolute;bottom: 10px;right: 20px;}
+.exprotbtn{display: inline-block;height: 20px;background:url(../images/link-normal2.png) 0 center no-repeat;padding-left: 25px;line-height: 20px;position: absolute;left: 10px;bottom: 10px;}
 
+.form-control label{font-size: 13px;padding-bottom: 2px;color: #333;display: block;}
+.form-control select,
+.form-control input,
+.form-control textarea{border:1px solid grey;border-radius:3px;background:#fff;box-shadow:1px 1px 1px #ccc;padding: 2px;color: #666;width: 180px;}
+.form-control span.tag{display: block;font-size: 10px;font-weight: bold;padding-bottom: 2px;color: #666;}
+.form-control .control-left{width: 80px;}
+.form-control .control-right{width: 90px;}
+.addbtn{padding:2px 0 2px 20px;line-height: 28px;color: #555;background: url(../images/add-normal.png) left center no-repeat;font: 12px Helvetica, sans-serif;display: inline-block;margin-top: 18px;margin-left: 10px;}
+.addbtn:hover{background-image: url(../images/add-hover.png);color: #A04F15;}
+
+.message{font:italic 11px Helvetica, sans-serif;height: 26px;line-height: 26px;}
