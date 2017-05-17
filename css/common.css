@@ -26,6 +26,12 @@ body{background-image: url(../images/bg.jpg);}
 .nav li{border-right: 1px solid #E0E0E0;float: left;position: relative;}
 .nav li a{color: #fff;padding: 7px 18px 5px;}
 .nav .subnav .downicon{width: 11px;height: 8px;background: url(../images/down.gif);display: inline-block;}
+.nav .subnav:hover ul{display: block;}
+.nav .subnav ul{position: absolute;top: 34px;left: 0;background:#555;width: 197px;z-index: 999;display: none;}
+.nav .subnav ul li{border-top: 1px solid grey;width: 100%;}
+.nav .subnav ul li{color: #fff;}
+.nav .subnav ul li a{display: block;padding: 0 0 0 18px;}
+.nav .subnav ul li a:hover{background:#000;}
 
 .page-content{margin: 0 27px 20px 27px;position: relative;}
 .titlebar{padding: 10px 0;border-bottom: 1px solid #ccc;margin-bottom: 19px;overflow: hidden;}
@@ -53,3 +59,25 @@ body{background-image: url(../images/bg.jpg);}
 .pannel .pannel-title .icons .close{background:#000 url(../images/close.png) center no-repeat;}
 .pannel-content{overflow: hidden;border:1px solid #ddd;border-top: 0;}
 .widget-empty{margin: 20px 5px 20px 20px;vertical-align: middle;font:italic 11px Helvetica, sans-serif;text-align: left;}
+
+.mark{background:#2d5972;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 1000;opacity: .3;}
+.dialog{background:#fff;width: 550px;min-height:100px;border-radius: 10px;box-shadow: 4px 4px 0 rgba(0, 0, 0, .5);overflow: hidden;position: fixed;top: 100px;left: 100px;z-index: 1001;}
+.dialog-title{height: 35px;cursor: move;position: relative;}
+.dialog-title-txt{background:#01A982;color: #fff;padding: 0 20px;line-height: 35px;float: left;font-size: 20px;font-weight: 300;border-radius: 10px 0;}
+.dialog-close{width: 35px;height: 35px;display: block;position: absolute;right: 0;top: 0;background:url(../images/closemodal.png) center no-repeat;}
+.dialog-close:hover{background-color: #eee;border-radius:0 0 0 10px;}
+.dialog-content{padding: 10px 10px 0;overflow: hidden;}
+.dialog-foot{height: 30px;text-align: right;padding: 0 10px 10px 10px;}
+
+.panel-box-left{width: 157px;border-radius: 7px;margin-right: 25px;border:1px solid #8d8d8d;box-shadow: 4px 4px #dfdfdf;font-size: 11px;font-weight: 300;padding: 10px;min-height: 325px;float: left;}
+.taglist{margin-top: 5px;}
+.taglist li{line-height: 15px;font-size: 12px;margin-bottom: 4px;border-radius: 3px;background:#000;}
+.taglist li.on{background:grey;}
+.taglist li a{color: #fff;margin: 0 10px;padding: 3px 0;display: block;}
+.pannel-box-right {font-size: 12px;vertical-align: middle;}
+.pannel-box-right label{font-size: 11px;font-weight: 300;margin-bottom: 5px;display: block;}
+.pannel-box-right li{height: 22px;line-height: 22px;}
+.pannel-box-right li input{vertical-align: middle;margin: 0;}
+
+.schpannel{}
+
