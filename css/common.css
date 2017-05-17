@@ -99,3 +99,21 @@ body{background-image: url(../images/bg.jpg);}
 .addbtn:hover{background-image: url(../images/add-hover.png);color: #A04F15;}
 
 .message{font:italic 11px Helvetica, sans-serif;height: 26px;line-height: 26px;}
+.msg-list{list-style-type:disc; margin-left: 20px;font-size: 10px;color: #666;font-weight: bold;margin-bottom: 10px;}
+
+.card{border:1px solid #ccc;margin-bottom: 19px;border-radius:5px;box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);overflow: hidden;background:#fff;}
+.card .card-content{padding: 15px;}
+.card .card-title{height: 23px;}
+.card .card-title span.tit{background:#01A982;display: inline-block;float: left;padding:0 19px;color: #fff;border-radius: 0 0 5px 0;font-size: 12px;}
+.card .card-title span.icon{padding-right: 5px;}
+.card .card-title span.tit a.schicon{color: #fff;line-height: 23px;background: url(../images/magglass.png) right center no-repeat;padding-right: 25px;}
+.card .card-title span.tit a.schicon:hover{background-image: url(../images/magglass-hover.png);}
+.fill-form-column{width: 220px;margin: 0 25px 0 0;display: inline-block;vertical-align: top;}
+.fill-form-column .form-control{margin-bottom: 5px;}
+.fill-form-column .form-control select,
+.fill-form-column .form-control input,
+.fill-form-column .form-control textarea{width: 207px;}
+.fill-form-column label{font-size: 14px;font-weight: 300;}
+.form-control input[disabled]{background:#eee;font-style: italic;}
+.card-bottom-buttons{margin: 40px 0 10px 10px;}
+
