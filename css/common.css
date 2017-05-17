@@ -4,7 +4,6 @@ html,body,.page-wrap {height: 100%;min-height: 100%;}
 a{text-decoration: none;}
 ul{list-style: none;}
 .hidden {  display: none; }
-.ui-widget input,input[type="text"],input[type="password"],.selectbox .handler {  height: 17px;}
 
 body{background-image: url(../images/bg.jpg);}
 .page-wrap{width: 95%;margin: 0 auto;background-color: #fff;}
