@@ -1,6 +1,6 @@
 html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label{margin: 0; padding: 0; border: 0; vertical-align: baseline}
 body, div, span, iframe, p, blockquote, pre, a, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label{font-family: 'Open Sans', sans-serif !important;}
-html,body,.page-wrap {height: 100%;min-height: 100%;}
+html,body,.page-wrap {height: 100%;min-height: 500px;}
 a{text-decoration: none;}
 ul{list-style: none;}
 .hidden {  display: none; }
@@ -31,6 +31,10 @@ body{background-image: url(../images/bg.jpg);}
 .nav .subnav ul li{color: #fff;}
 .nav .subnav ul li a{display: block;padding: 0 0 0 18px;}
 .nav .subnav ul li a:hover{background:#000;}
+.nav .subnav .subnav ul{left: 198px;top: -1px;display: none;}
+.nav .subnav .subnav:hover ul{display: block;}
+.nav .righticon{float: right;margin: 12px 10px auto auto;}
+
 
 .page-content{margin: 0 27px 20px 27px;position: relative;}
 .titlebar{padding: 10px 0;border-bottom: 1px solid #ccc;margin-bottom: 19px;overflow: hidden;}
@@ -52,7 +56,7 @@ body{background-image: url(../images/bg.jpg);}
 .pannel .pannel-title{border:2px solid #01A982; padding: 0 10px;line-height: 28px;overflow: hidden;position: relative;cursor: move;}
 .pannel .pannel-title a{font-size: 14px;color: #000;}
 .pannel .pannel-title a:hover{color: #A9D0F5;}
-.pannel .pannel-title .icons{position: absolute;right: 3px;top: 6px;}
+.pannel .pannel-title .icons{position: absolute;right: 3px;top: 3px;}
 .pannel .pannel-title .icons .icon{width: 17px;height: 17px;background-color: #000;padding: 0;display: inline-block;border-radius: 3px;}
 .pannel .pannel-title .icons .minimize{background:#000 url(../images/min.png) center no-repeat;}
 .pannel .pannel-title .icons .close{background:#000 url(../images/close.png) center no-repeat;}
