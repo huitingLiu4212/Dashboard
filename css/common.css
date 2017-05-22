@@ -48,9 +48,15 @@ body{background-image: url(../images/bg.jpg);}
 .buttonsty{background:#000;color: #fff;box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);display: inline-block;border-radius: 2px;padding: 0 18px;font-size: 15px;font-weight:bold;text-shadow:1px 1px 0px #000;line-height: 25px;vertical-align: middle;}
 .refreshbtn{width: 25px;height: 25px;background:#000 url(../images/refresh.png) center no-repeat;padding: 0;margin-left: 5px;}
 
+.sortable-wrap{width: 100%;}
+.sortable-column{float: left;}
+.sortable-column ul.sortable{padding: 0 5px 50px 5px;}
+
 .ui-state-default{margin-bottom: 10px;}
 .ui-sortable-placeholder{border:3px dashed #aaa;}
 .ui-sortable-helper{opacity: .5;}
+
+
 
 .pannel{background: #fff;box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);color: #4f4f4f;}
 .pannel .pannel-title{border:2px solid #01A982; padding: 0 10px;line-height: 28px;overflow: hidden;position: relative;cursor: move;}
@@ -63,8 +69,8 @@ body{background-image: url(../images/bg.jpg);}
 .pannel-content{overflow: hidden;border:1px solid #ddd;border-top: 0;}
 .widget-empty{margin: 20px 5px 20px 20px;vertical-align: middle;font:italic 11px Helvetica, sans-serif;text-align: left;}
 
-.mark{background:#2d5972;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 1000;opacity: .3;}
-.dialog{background:#fff;width: 550px;min-height:100px;border-radius: 10px;box-shadow: 4px 4px 0 rgba(0, 0, 0, .5);overflow: hidden;position: fixed;top: 100px;left: 100px;z-index: 1001;}
+.mark{background:#2d5972;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 1000;opacity: .3;display: none;}
+.dialog{background:#fff;width: 550px;min-height:100px;border-radius: 10px;box-shadow: 4px 4px 0 rgba(0, 0, 0, .5);overflow: hidden;position: fixed;top: 100px;left: 100px;z-index: 1001;display: none;}
 .dialog-title{height: 35px;cursor: move;position: relative;}
 .dialog-title-txt{background:#01A982;color: #fff;padding: 0 20px;line-height: 35px;float: left;font-size: 20px;font-weight: 300;border-radius: 10px 0;}
 .dialog-close{width: 35px;height: 35px;display: block;position: absolute;right: 0;top: 0;background:url(../images/closemodal.png) center no-repeat;}
