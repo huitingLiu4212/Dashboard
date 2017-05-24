@@ -51,7 +51,7 @@ $( function() {
         }
     ];
 
-	$('#sortable').DataTable({
+	var table=$('#sortable').DataTable({
 		data:data,
 		fixedHeader:true,
 		colReorder:true,
@@ -64,5 +64,7 @@ $( function() {
 			{data:"description"},
 			{data:"quantity"}
 		]
-	})
+	});
+
+    //table.column( 0 ).visible( false );
  });

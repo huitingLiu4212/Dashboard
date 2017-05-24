@@ -4,11 +4,14 @@ $( function() {
         connectWith:'.sortable',
         dropOnEmpty:true,
     	revert: true,
+        placeholder:"sortable-placeholder",
+        start:function(event, ui){
+            var $placeHolder=$('.ui-sortable-placeholder');
+            $placeHolder.css('height',ui.item.height());
+        },
     	change: function(event, ui){
     		// console.dir(event);
     		// console.dir(ui);
-            var $placeHolder=$('.ui-sortable-placeholder');
-            $placeHolder.css('height',ui.item.height());
     	},
         stop: function(event, ui){
             //
@@ -52,6 +55,10 @@ $( function() {
         }
     };
 
+    $('#dialog').draggable({
+        handle:".dialog-title"
+    });
+
     $('#dialog *[name=close]').on('click',function(){
     	$('#mark').hide();
     	$('#dialog').hide();
@@ -67,6 +74,11 @@ $( function() {
         event.preventDefault();
         $(this).addClass('on').siblings().removeClass('on');
         pageColumn.changeTo($(this).html());
+    });
+
+    $('.taglist li').on('click',function(){
+        $(this).addClass('on').siblings().removeClass('on');
+        //add code
     });
 
     pageColumn.changeTo(1);
