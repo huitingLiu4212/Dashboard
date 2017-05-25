@@ -55,6 +55,7 @@ $( function() {
 		data:data,
 		fixedHeader:true,
 		colReorder:true,
+        autoWidth:false,
 		columns:[
 			{data:"customer"},
 			{data:"location"},

@@ -57,7 +57,7 @@ body{background-image: url(../images/bg.jpg);}
 .ui-sortable-helper{opacity: .5;}
 .dataTables_length,.dataTables_filter,.dataTables_info,.dataTables_paginate{display: none;}
 table.dataTable.no-footer{border-bottom-color: #fff;}
-table.sortable{overflow: hidden;border-radius:5px 5px 0 0;}
+table.sortable{overflow: hidden;border-radius:5px 5px 0 0;width: 100%;}
 table.sortable thead{background-color: #01A982;}
 table.sortable thead th{color: #fff; text-shadow:1px 1px 0 rgba(0, 0, 0, 0.3);border-left: 1px dotted #ccc;font-size: 12px;height: 19px;line-height: 20px;padding: 5px 4px;}
 table.sortable tbody td{color: #4f4f4f;border-left:1px dotted #ccc;height: 25px;padding: 2px 5px;font-size: 12px;}
