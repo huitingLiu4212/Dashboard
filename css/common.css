@@ -4,6 +4,7 @@ html,body,.page-wrap {height: 100%;min-height: 500px;}
 a{text-decoration: none;}
 ul{list-style: none;}
 .hidden {  display: none; }
+.fr{float: right;}
 
 body{background-image: url(../images/bg.jpg);}
 .page-wrap{width: 95%;margin: 0 auto;background-color: #fff;}
@@ -62,6 +63,8 @@ table.sortable thead{background-color: #01A982;}
 table.sortable thead th{color: #fff; text-shadow:1px 1px 0 rgba(0, 0, 0, 0.3);border-left: 1px dotted #ccc;font-size: 12px;height: 19px;line-height: 20px;padding: 5px 4px;}
 table.sortable tbody td{color: #4f4f4f;border-left:1px dotted #ccc;height: 25px;padding: 2px 5px;font-size: 12px;}
 table.sortable tbody tr.even{background:#ddd;}
+table.sortable th .close-column{display: inline-block;width: 16px;height: 16px;background:url(../images/delete-col.png) center no-repeat;vertical-align: middle;float: right;margin-top: 2px;visibility: hidden;}
+table.sortable th:not(.sorting_desc):not(.sorting_asc):hover .close-column{visibility: visible;}
 table.fixedHeader-floating{border-radius: 0;}
 table.fixedHeader-floating thead{background-color: #9c3;}
 table.fixedHeader-floating thead th{border-bottom:none;}
@@ -88,23 +91,29 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .widget-empty{margin: 20px 5px 20px 20px;vertical-align: middle;font:italic 11px Helvetica, sans-serif;text-align: left;}
 
 .mark{background:#2d5972;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 1000;opacity: .3;display: none;}
-.dialog{background:#fff;width: 550px;min-height:100px;border-radius: 10px;box-shadow: 4px 4px 0 rgba(0, 0, 0, .5);overflow: hidden;position: fixed;top: 100px;left: 50%;margin-left:-275px;z-index: 1001;display: none;}
+.dialog{background:#fff;min-width: 550px;min-height:100px;border-radius: 10px;box-shadow: 4px 4px 0 rgba(0, 0, 0, .5);overflow: hidden;position: fixed;top: 100px;left: 50%;margin-left:-275px;z-index: 1001;display: none;}
 .dialog-title{height: 35px;cursor: move;position: relative;}
 .dialog-title-txt{background:#01A982;color: #fff;padding: 0 20px;line-height: 35px;float: left;font-size: 20px;font-weight: 300;border-radius: 10px 0;}
 .dialog-close{width: 35px;height: 35px;display: block;position: absolute;right: 0;top: 0;background:url(../images/closemodal.png) center no-repeat;}
 .dialog-close:hover{background-color: #eee;border-radius:0 0 0 10px;}
 .dialog-content{padding: 10px 10px 0;overflow: hidden;}
 .dialog-foot{height: 30px;text-align: right;padding: 0 10px 10px 10px;}
+.dialog label{font-size: 13px;}
+.dialogtb td{vertical-align: top;}
+.dialog .pagination-total{margin-bottom: 0;}
 
-.panel-box-left{width: 157px;border-radius: 7px;margin-right: 25px;border:1px solid #8d8d8d;box-shadow: 4px 4px #dfdfdf;font-size: 11px;font-weight: 300;padding: 10px;min-height: 325px;float: left;}
+.panel-box-left{width: 157px;border-radius: 7px;margin-right: 25px;border:1px solid #8d8d8d;box-shadow: 4px 4px #dfdfdf;font-size: 11px;font-weight: 300;padding: 10px;min-height: 325px;}
+.panel-box-left .abtns{text-align: right;}
+.panel-box-left .abtns a{margin: 0 5px;font-weight: normal;}
+.panel-box-left .abtns a:hover{text-decoration: underline;}
 .taglist{margin-top: 5px;}
 .taglist li{line-height: 15px;font-size: 12px;margin-bottom: 4px;border-radius: 3px;background:#000;}
 .taglist li.on{background:grey;}
 .taglist li a{color: #fff;margin: 0 10px;padding: 3px 0;display: block;}
 .pannel-box-right {font-size: 12px;vertical-align: middle;}
 .pannel-box-right label{font-size: 11px;font-weight: 300;margin-bottom: 5px;display: block;}
-.pannel-box-right li{height: 22px;line-height: 22px;}
-.pannel-box-right li input{vertical-align: middle;margin: 0;}
+.checkboxList li{height: 22px;line-height: 22px;}
+.checkboxList li input{vertical-align: middle;margin: 0;}
 
 .schpannel .togger-btn{text-align: right;margin-bottom: 20px;}
 .schpannel .togger-btn .buttonsty{line-height: 21px;font-size: 10px;text-shadow:1px 1px 0px #023171;}
@@ -119,9 +128,13 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .form-control select,
 .form-control input,
 .form-control textarea{border:1px solid grey;border-radius:3px;background:#fff;box-shadow:1px 1px 1px #ccc;padding: 2px;color: #666;width: 180px;}
+.form-control select{padding: 1px 2px;}
 .form-control span.tag{display: block;font-size: 10px;font-weight: bold;padding-bottom: 2px;color: #666;}
 .form-control .control-left{width: 80px;}
 .form-control .control-right{width: 90px;}
+.panel-box-left .form-control .control-left{width: 60px;}
+.panel-box-left .form-control .control-right{width: 80px;}
+.panel-box-left .form-control{margin:5px 0;}
 .addbtn{padding:2px 0 2px 20px;line-height: 28px;color: #555;background: url(../images/add-normal.png) left center no-repeat;font: 12px Helvetica, sans-serif;display: inline-block;margin-top: 18px;margin-left: 10px;}
 .addbtn:hover{background-image: url(../images/add-hover.png);color: #A04F15;}
 
@@ -143,4 +156,6 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .fill-form-column label{font-size: 14px;font-weight: 300;}
 .form-control input[disabled]{background:#eee;font-style: italic;}
 .card-bottom-buttons{margin: 40px 0 10px 10px;}
+.commandlink{width: 18px;height: 18px;display: inline-block;background:url(../images/play-sml-hover.png) center no-repeat;vertical-align: middle;}
+.commandlink:hover{background-image:url(../images/play-sml.png);}
 

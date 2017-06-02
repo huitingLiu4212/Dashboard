@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>HPE SMT DEMO</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Just+Another+Hand|Roboto:400,300,700|PT+Sans:400,700">
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
@@ -46,31 +47,61 @@
 					<a href="#">Home</a>
 				</li>
 				<li>
-					<a href="#">On-Hand</a>
+					<a href="view.html">On-Hand</a>
 				</li>
 				<li class="subnav">
 					<a href="#">Consume Parts <img src="./images/down.gif" alt="">
 					</a>
 					<ul>
 						<li>
-							<a href="#">Consume Parts</a>
+							<a href="fill.html">Consume Parts</a>
 						</li>
 						<li>
-							<a href="#">Consume Parts</a>
+							<a href="multiple.html">Multiple Parts</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="#">Receive Parts</a>
 				</li>
-				<li>
+				<li class="subnav">
 					<a href="#">Update Returns <img src="./images/down.gif" alt=""></a>
+					<ul>
+						<li>
+							<a href="fill.html">Update Return</a>
+						</li>
+						<li>
+							<a href="fill.html">Update Return</a>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<a href="#">Part Request</a>
 				</li>
-				<li>
+				<li class="subnav">
 					<a href="#">View <img src="./images/down.gif" alt=""></a>
+					<ul>
+						<li>
+							<a href="fill.html">Part Consumptions</a>
+						</li>
+						<li>
+							<a href="fill.html">Part Requests</a>
+						</li>
+						<li class="subnav">
+							<a href="fill.html">Returns <img class="righticon" src="./images/right.gif" alt=""></a>
+							<ul>
+								<li>
+									<a href="#">No Returns</a>
+								</li>
+								<li>
+									<a href="#">Overdue Returns</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="fill.html">Inbound Receipts</a>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<a href="#">Update Shelf Locations</a>
@@ -132,7 +163,7 @@
 				</div>
 
 				<div class="card">
-					<div class="card-title"><span class="tit icon"><a href="#" class="schicon">Failed Product</a></span></div>
+					<div class="card-title"><span class="tit icon"><a href="javascript:;" class="schicon">Failed Product</a></span></div>
 					<div class="card-content">
 						<div class="fill-form-column">
 							<div class="form-control">
@@ -152,7 +183,7 @@
 				</div>
 
 				<div class="card">
-					<div class="card-title"><span class="tit icon"><a href="#" class="schicon">Part Used In Repair</a></span></div>
+					<div class="card-title"><span class="tit icon"><a href="javascript:;" class="schicon">Part Used In Repair</a></span></div>
 					<div class="card-content">
 						<div class="fill-form-column">
 							<div class="form-control">
@@ -187,9 +218,106 @@
 	</div>
 </div>
 
-
+<div class="mark" id="mark"></div>
+<div class="dialog" id="dialog">
+	<div class="dialog-title">
+		<span class="dialog-title-txt">Part Catalog</span>
+		<a href="#" class="dialog-close" name="close"></a>
+	</div>
+	<div class="dialog-content">
+	<table class="dialogtb">
+		<tr>
+			<td>
+				<div class="panel-box-left">
+					<label>Part Number:</label>
+					<div class="form-control">
+						<select name="" id="" class="control-left">
+							<option value="">contains</option>
+						</select>
+						<input type="text" class="control-right" value="">
+					</div>
+					<label>Part Type:</label>
+					<p class="abtns">
+						<a href="#">ALL</a>
+						<a href="#">NONE</a>
+					</p>
+					<ul class="checkboxList">
+						<li>
+							<input type="checkbox"> Cable
+						</li>
+						<li>
+							<input type="checkbox"> Fan
+						</li>
+						<li>
+							<input type="checkbox"> Memory
+						</li>
+						<li>
+							<input type="checkbox"> Cable
+						</li>
+						<li>
+							<input type="checkbox"> Fan
+						</li>
+						<li>
+							<input type="checkbox"> Hard Drive
+						</li>
+						<li>
+							<input type="checkbox"> Memory
+						</li>
+					</ul>
+					<label>Description:</label>
+					<div class="form-control">
+						<select name="" id="" class="control-left">
+							<option value="">contains</option>
+						</select>
+						<input type="text" class="control-right" value="">
+					</div>
+					<p>&nbsp;</p>
+					<p>
+						<a href="#" class="buttonsty fr" name="close">Display</a>
+					</p>
+				</div>
+			</td>
+			<td>
+				<div class="pannel-box-right">
+					<label>To sort the table, click the column header</label>
+					<table id="sortable" class="sortable" style="width: 600px;">
+						<thead>
+							<tr>
+								<th></th>
+								<th>CUSTOMER <a href="javascript:;" class="close-column"></a></th>
+								<th>LOCATION <a href="javascript:;" class="close-column"></a></th>
+								<th>SHELF LOCATION <a href="javascript:;" class="close-column"></a></th>
+							</tr>
+						</thead>
+					</table>
+					<div class="pagination-bar">
+						<span class="text">(Page 1 of 19)</span>
+						<span class="pagination">
+							<span>1</span>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							…
+							<a href="#" class="next"></a>
+							<a href="#" class="last"></a>
+						</span>
+					</div>
+					<div class="pagination-total">
+						Total Quantity: <strong>11049</strong>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="dialog-foot">
+		<a href="#" class="buttonsty" name="close">Close</a>
+	</div>
+</div>
 
 <script src="./scripts/3rd/jquery.js" type="text/javascript"></script>
+<script src="./scripts/3rd/jquery-ui.min.js" type="text/javascript"></script>
+<script src="./scripts/3rd/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="./scripts/fill.js" type="text/javascript"></script>
 </body>
 </html>

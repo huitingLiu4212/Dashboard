@@ -14,7 +14,8 @@ $( function() {
     		// console.dir(ui);
     	},
         stop: function(event, ui){
-            //
+            console.dir(event);
+            console.dir(ui);
         }
     });
 
@@ -29,7 +30,7 @@ $( function() {
                 var $wrap = $('.sortable-wrap'),
                     $liList = $('.sortable-wrap li.ui-state-default'),
                     len   = $liList.length;
-                for(var i=this.num+1;i<=num;i++){
+                for(var i=parseInt(this.num)+1;i<=num;i++){
                     var $dom=$('<div class="sortable-column" id="column'+i+'"></div>');
                     var $ul =$('<ul id="sortable'+i+'" class="sortable"></ul>');
                     $wrap.append($dom.append($ul));
@@ -40,7 +41,7 @@ $( function() {
                     connectWith:'.sortable'
                 });
             }else{
-                for(var i=this.num;i>num;i--){
+                for(var i=parseInt(this.num);i>num;i--){
                     var $dom = $('div#column'+i),
                         $liList = $dom.find('li.ui-state-default');
                     $('div#column1 ul').append($liList.remove());
@@ -76,9 +77,14 @@ $( function() {
         pageColumn.changeTo($(this).html());
     });
 
+    //select widget切换
     $('.taglist li').on('click',function(){
         $(this).addClass('on').siblings().removeClass('on');
         //add code
+    });
+
+    $('.checkboxList').on('li','click',function(){
+        //update widget
     });
 
     pageColumn.changeTo(1);

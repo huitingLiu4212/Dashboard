@@ -67,5 +67,10 @@ $( function() {
 		]
 	});
 
-    //table.column( 0 ).visible( false );
+    $('#sortable .close-column').on('click',function(evt){
+        evt.stopPropagation();
+        evt.preventDefault();
+        var index = $(this).parents('th').index();
+        table.column( index ).visible( false );
+    })
  });
