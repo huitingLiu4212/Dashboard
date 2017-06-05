@@ -46,7 +46,7 @@
 		<div class="nav">
 			<ul>
 				<li>
-					<a href="#">Home</a>
+					<a href="index.html">Home</a>
 				</li>
 				<li>
 					<a href="view.html">On-Hand</a>
@@ -64,7 +64,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Receive Parts</a>
+					<a href="fill.html">Receive Parts</a>
 				</li>
 				<li class="subnav">
 					<a href="#">Update Returns <img src="./images/down.gif" alt=""></a>
@@ -78,7 +78,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Part Request</a>
+					<a href="fill.html">Part Request</a>
 				</li>
 				<li class="subnav">
 					<a href="#">View <img src="./images/down.gif" alt=""></a>
@@ -93,10 +93,10 @@
 							<a href="fill.html">Returns <img class="righticon" src="./images/right.gif" alt=""></a>
 							<ul>
 								<li>
-									<a href="#">No Returns</a>
+									<a href="fill.html">No Returns</a>
 								</li>
 								<li>
-									<a href="#">Overdue Returns</a>
+									<a href="fill.html">Overdue Returns</a>
 								</li>
 							</ul>
 						</li>
@@ -106,7 +106,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Update Shelf Locations</a>
+					<a href="fill.html">Update Shelf Locations</a>
 				</li>
 			</ul>
 		</div>
@@ -125,7 +125,7 @@
 			<div class="content">
 				<div class="schpannel">
 					<div class="togger-btn">
-						<a href="#" class="buttonsty" id="toggerbtn"><span>SEARCH</span></a>
+						<a href="javascript:;" class="buttonsty" id="toggerbtn"><span>SEARCH</span></a>
 					</div>
 					<div class="schcontent" id="schContent">
 						<form action="">
@@ -190,7 +190,16 @@
 									<input type="text" class="control-right" value="">
 								</div>
 							</div>
-							<a href="#" class="addbtn">Add</a>
+							<div class="sch-column hidden">
+								<div class="form-control">
+									<label>AND:</label>
+									<select name="" id="">
+										<option value=""></option>
+										<option value="">Part Type</option>
+									</select>
+								</div>
+							</div>
+							<a href="javascript:;" class="addbtn">Add</a>
 							<a href="#" class="buttonsty sch-subbtn">Display</a>
 							<a href="#" class="exprotbtn">Export Data</a>
 						</form>

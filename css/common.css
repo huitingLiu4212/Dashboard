@@ -3,7 +3,7 @@ body, div, span, iframe, p, blockquote, pre, a, b, u, i, dl, dt, dd, ol, ul, li,
 html,body,.page-wrap {height: 100%;min-height: 500px;}
 a{text-decoration: none;}
 ul{list-style: none;}
-.hidden {  display: none; }
+.hidden {  display: none !important; }
 .fr{float: right;}
 
 body{background-image: url(../images/bg.jpg);}
@@ -77,7 +77,7 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .pagination .last{background-image: url(../images/pagination-arrows.png);background-position:-48px 0;}
 .pagination-total{text-align: right;font-style: italic;font-size: 12px;margin-bottom: 70px;margin-top:5px;}
 .pagenum{margin-left: 20px;}
-.pagenum select{padding: 0;height: 16px;vertical-align: middle;font-size: 10px;margin-right: 5px;}
+.pagenum select{padding: 0;height: 16px;vertical-align: middle;font-size: 10px;margin-right: 5px;background:#777;color: #fff;border-radius: 3px;}
 
 .pannel{background: #fff;box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);color: #4f4f4f;}
 .pannel .pannel-title{border:2px solid #01A982; padding: 0 10px;line-height: 28px;overflow: hidden;position: relative;cursor: move;}
@@ -86,6 +86,7 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .pannel .pannel-title .icons{position: absolute;right: 3px;top: 3px;}
 .pannel .pannel-title .icons .icon{width: 17px;height: 17px;background-color: #000;padding: 0;display: inline-block;border-radius: 3px;}
 .pannel .pannel-title .icons .minimize{background:#000 url(../images/min.png) center no-repeat;}
+.pannel .pannel-title .icons .maximize{background:#000 url(../images/max.png) center no-repeat;}
 .pannel .pannel-title .icons .close{background:#000 url(../images/close.png) center no-repeat;}
 .pannel-content{overflow: hidden;border:1px solid #ddd;border-top: 0;}
 .widget-empty{margin: 20px 5px 20px 20px;vertical-align: middle;font:italic 11px Helvetica, sans-serif;text-align: left;}
@@ -158,4 +159,11 @@ table.fixedHeader-floating thead th{border-bottom:none;}
 .card-bottom-buttons{margin: 40px 0 10px 10px;}
 .commandlink{width: 18px;height: 18px;display: inline-block;background:url(../images/play-sml-hover.png) center no-repeat;vertical-align: middle;}
 .commandlink:hover{background-image:url(../images/play-sml.png);}
+
+table.pannel-tb{width: 100%;}
+table.pannel-tb thead th,
+table.pannel-tb tbody td{background:#01A982;line-height: 14px;padding: 9px 0;color: #333;font-size: 12px;font-weight: normal;text-align: center;vertical-align: middle;}
+table.pannel-tb tbody td{background:#fff;color: #777;}
+.pannel-content h5{font-family: "Trebuchet MS", Trebuchet, Arial, Helvetica;font-weight: bold;font-size: 18px;color: #000;margin: 1em 0;font-style: normal;}
+.pannel-content .txt{font-style: normal;font-family: Arial, Helvetica;font-size: 15px;color: #000;}
 

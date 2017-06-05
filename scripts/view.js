@@ -1,7 +1,13 @@
 $( function() {
 	$('#toggerbtn').on('click',function(){
 		$('#schContent').slideToggle();
+        $(this).toggleClass('down');
 	});
+
+    $('.addbtn').on('click',function(){
+        $('.sch-column').removeClass('hidden');
+        $(this).addClass('hidden');
+    })
 
     var data = [
         {

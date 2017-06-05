@@ -83,8 +83,34 @@ $( function() {
         //add code
     });
 
-    $('.checkboxList').on('li','click',function(){
+    $('.checkboxList').on('click','li',function(){
         //update widget
+    });
+
+    $('.sortable-wrap').on('click','.icons .close',function(evt){
+        var $parents = $(this).parents('.ui-state-default');
+        $parents.remove();
+        evt.stopPropagation();
+    });
+
+
+    $('.sortable-wrap').on('click','.icons .minimize',function(evt){
+        var $parents = $(this).parents('.ui-state-default');
+        var $content = $parents.find('.pannel-content');
+        $(this).removeClass('minimize');
+        $(this).addClass('maximize');
+        $content.hide();
+        evt.stopPropagation();
+    });
+
+
+    $('.sortable-wrap').on('click','.icons .maximize',function(evt){
+        var $parents = $(this).parents('.ui-state-default');
+        var $content = $parents.find('.pannel-content');
+        $content.show();
+        $(this).removeClass('maximize');
+        $(this).addClass('minimize');
+        evt.stopPropagation();
     });
 
     pageColumn.changeTo(1);
