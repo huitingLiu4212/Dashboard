@@ -161,15 +161,20 @@
 				<table id="example" class="sortable">
 			        <thead>
 			            <tr>
-			                <th>First name</th>
-			                <th>Last name</th>
-			                <th>Position</th>
-			                <th>Office</th>
-			                <th width="18%">Start date</th>
-			                <th>Salary</th>
+			            	<th>Row</th>
+			                <th>*Work Order</th>
+			                <th>*Product Serial Number</th>
+			                <th>*Part Number</th>
+			                <th>*Failure Description</th>
+			                <th>Repair Comments</th>
+			                <th>*Return Status</th>
 			            </tr>
 			        </thead>
 			    </table>
+
+			    <p class="vr">
+			    	<a href="javascript:;" class="addbtn" id="addrow">Add Rows</a>
+			    </p>
 
 				<p class="card-bottom-buttons">
 					<a href="#" class="buttonsty">Submit</a>
@@ -184,7 +189,116 @@
 
 
 
+<div class="mark" id="mark"></div>
+<div class="dialog" id="dialog">
+	<div class="dialog-title">
+		<span class="dialog-title-txt">Select Part Number</span>
+		<a href="#" class="dialog-close" name="close"></a>
+	</div>
+	<div class="dialog-content">
+	<table class="dialogtb">
+		<tr>
+			<td>
+				<div class="panel-box-left">
+					<div class="form-control">
+						<label>Customer:</label>
+						<div class="form-control">
+							<select name="" id="">
+								<option value="">All Customer</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-control">
+						<label>Location:</label>
+						<select name="" id="">
+							<option value="">All Site Locations</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label>Shelf Location:</label>
+						<select name="" id="" class="control-left">
+							<option value="">All Site Locations</option>
+						</select>
+						<input type="text" class="control-right" value="">
+					</div>
+					<div class="form-control">
+						<label>Model Number:</label>
+						<span class="tag">Begin typing, then select</span>
+						<input type="text" class="" value="">
+					</div>
+					<div class="form-control">
+						<label>Serial Number:</label>
+						<span class="tag">Begin typing, then select</span>
+						<input type="text" class="" value="">
+					</div>
+					<div class="form-control">
+						<label>Part Number:</label>
+						<select name="" id="" class="control-left">
+							<option value="">contains</option>
+						</select>
+						<input type="text" class="control-right" value="">
+					</div>
+					<div class="form-control">
+						<label>Description:</label>
+						<select name="" id="" class="control-left">
+							<option value="">contains</option>
+						</select>
+						<input type="text" class="control-right" value="">
+					</div>
+					<div class="form-control hidden">
+						<label>AND:</label>
+						<select name="" id="">
+							<option value=""></option>
+						</select>
+					</div>
+					<p>&nbsp;</p>
+					<p>
+						<a href="javascript:;" class="addbtn">Add</a>
+						<a href="#" class="buttonsty fr" name="close">Display</a>
+					</p>
+				</div>
+			</td>
+			<td>
+				<div class="pannel-box-right">
+					<label>Show all columns and restore the order</label>
+					<table id="dialogsortable" class="sortable" style="width:600px;">
+						<thead>
+							<tr>
+								<th></th>
+								<th>CUSTOMER <a href="javascript:;" class="close-column"></a></th>
+								<th>LOCATION <a href="javascript:;" class="close-column"></a></th>
+								<th>SHELF LOCATION <a href="javascript:;" class="close-column"></a></th>
+							</tr>
+						</thead>
+					</table>
+					<div class="pagination-bar">
+						<span class="text">(Page 1 of 19)</span>
+						<span class="pagination">
+							<span>1</span>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							…
+							<a href="#" class="next"></a>
+							<a href="#" class="last"></a>
+						</span>
+					</div>
+					<div class="pagination-total">
+						Total Quantity: <strong>11049</strong>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="dialog-foot">
+		<a href="#" class="buttonsty" name="close">Close</a>
+	</div>
+</div>
+
+
 <script src="./scripts/3rd/jquery.js" type="text/javascript"></script>
+<script src="./scripts/3rd/jquery-ui.min.js" type="text/javascript"></script>
 <script src="./scripts/3rd/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="./scripts/3rd/dataTables.editor.min.js" type="text/javascript"></script>
 <script src="./scripts/multiple.js" type="text/javascript"></script>

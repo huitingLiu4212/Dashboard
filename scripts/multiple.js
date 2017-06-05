@@ -1,78 +1,56 @@
 $( function() {
-var data = {
-  "data": [
-    {
-      "DT_RowId": "row_1",
-      "first_name": "Tiger",
-      "last_name": "Nixon",
-      "position": "System Architect",
-      "email": "t.nixon@datatables.net",
-      "office": "Edinburgh",
-      "extn": "5421",
-      "age": "61",
-      "salary": "320800",
-      "start_date": "2011-04-25"
-    },
-    {
-      "DT_RowId": "row_2",
-      "first_name": "Garrett",
-      "last_name": "Winters",
-      "position": "Accountant",
-      "email": "g.winters@datatables.net",
-      "office": "Tokyo",
-      "extn": "8422",
-      "age": "63",
-      "salary": "170750",
-      "start_date": "2011-07-25"
-    },
-    {
-      "DT_RowId": "row_3",
-      "first_name": "Ashton",
-      "last_name": "Cox",
-      "position": "Junior Technical Author",
-      "email": "a.cox@datatables.net",
-      "office": "San Francisco",
-      "extn": "1562",
-      "age": "66",
-      "salary": "86000",
-      "start_date": "2009-01-12"
-    }
-    ]
+var emptyData = {
+      "DT_RowId": "",
+      "workOrder": "",
+      "ProductSNumber": "",
+      "PartNumber": "",
+      "FailureDesc": "",
+      "RepairComment": "",
+      "ReturnStatus": ""
+    };
+var creatEmptyArr=function(n){
+  var arr = [];
+  for(var i=0;i<n;i++){
+    arr[i]=$.extend({},emptyData);
+  };
+  return arr;
 };
+
 var editor = new $.fn.dataTable.Editor( {
         table: "#example",
         fields: [ {
-                label: "First name:",
-                name: "first_name"
+                label: "Work Order:",
+                name: "workOrder"
             }, {
-                label: "Last name:",
-                name: "last_name",
+                label: "*Product Serial Number:",
+                name: "ProductSNumber"
+            }, {
+                label: "Part Number:",
+                name: "PartNumber"
+            }, {
+                label: "Failure Description:",
+                name: "FailureDesc",
                 type: "select",
                 options: [
-                    { label: "1 (highest)", value: "1" },
-                    { label: "2",           value: "2" },
-                    { label: "3",           value: "3" },
-                    { label: "4",           value: "4" },
-                    { label: "5 (lowest)",  value: "5" }
+                    { label: "", value: "0" },
+                    { label: "Failed in system", value: "1" },
+                    { label: "Wrong part in box", value: "2" },
+                    { label: "DOA", value: "3" }
                 ]
             }, {
-                label: "Position:",
-                name: "position"
-            }, {
-                label: "Office:",
-                name: "office",
+                label: "Repair Comments:",
+                name: "RepairComment",
                 type:"textarea"
             }, {
-                label: "Extension:",
-                name: "extn",
-                type:"textarea"
-            }, {
-                label: "Start date:",
-                name: "start_date",
-                type: "datetime"
-            }, {
-                label: "Salary:",
-                name: "salary"
+                label: "Return Status:",
+                name: "ReturnStatus",
+                type: "select",
+                options: [
+                    { label: "", value: "0" },
+                    { label: "Standard", value: "1" },
+                    { label: "Deffered: Hard Drive Sanitization", value: "2" },
+                    { label: "No return", value: "3" }
+                ]
             }
         ]
     } );
@@ -81,27 +59,169 @@ var editor = new $.fn.dataTable.Editor( {
     $('#example').on( 'click', 'tbody td', function (e) {
         editor.inline( this );
     } );
- 
-    $('#example').DataTable( {
-        dom: "Bfrtip",
-        data: data.data,
-        columns: [
-            { data: "first_name" },
-            { data: "last_name" },
-            { data: "position" },
-            { data: "office" },
-            { data: "start_date" },
-            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
-        ],
-        select: {
-            style:    'os',
-            selector: 'td:first-child'
-        },
-        buttons: [
-            { extend: "create", editor: editor },
-            { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
-        ]
+
+     $.extend( $.fn.dataTable.defaults, {
+        searching: false,
+        ordering:  false
     } );
+ 
+    var t = $('#example').DataTable( {
+        dom: "Bfrtip",
+        paging:false,
+        // data: data.data,
+        columns: [
+            {data: function(){
+              return ''
+            }},
+            { data: "workOrder"},
+            { data: "ProductSNumber" },
+            { data: "PartNumber" },
+            { data: "FailureDesc" },
+            { data: "RepairComment" },
+            { data: "ReturnStatus" }
+        ],
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        },{
+          "targets":2,
+          "render" : function ( data, type, row ) {
+                    return data +'<i class="schicon"></i>';
+                },
+        },{
+          "targets":3,
+          "render" : function ( data, type, row ) {
+                    return data +'<i class="schicon"></i>';
+                },
+        } ],
+        "order": [[ 1, 'asc' ]]
+    } );
+
+    t.on( 'order.dt search.dt', function () {
+        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+
+
+    $('#addrow').on('click',function(){
+      var table = $('#example').DataTable();
+      table.rows.add(creatEmptyArr(5)).draw();
+    });
+
+    $('.sortable').on('click','.schicon',function(evt){
+      evt.stopPropagation();
+      $('#dialog').css('margin-left',(-1*$('#dialog').outerWidth()/2)+'px');
+      $('#dialog,#mark').show();
+    });
+
+    $('.panel-box-left .addbtn').on('click',function(){
+      $('.panel-box-left .hidden').removeClass('hidden');
+      $(this).addClass('hidden');
+    });
+
+    var data = [
+        {
+            "customer":   "NEWCO",
+            "location":   "SMF1 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "12341234",
+            "type":     "Cable",
+            "description":  "Test",
+            "quantity":  "1"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        },
+        {
+            "customer":   "NEWCO2",
+            "location":   "SMF2 - Nodes only",
+            "shelfLocation": "A3",
+            "partNumber": "123412345",
+            "type":     "Cable",
+            "description":  "Testaaa",
+            "quantity":  "2"
+        }
+    ];
+
+
+  var table=$('#dialogsortable').DataTable({
+    data:data,
+    autoWidth:false,
+    columns:[
+      {data:function(){
+        return "<a class='commandlink' href='javascript:;'></a>"
+      }},
+      {data:"customer"},
+      {data:"location"},
+      {data:"shelfLocation"}
+    ],
+    // scrollX:true
+  });
+
+
+  $('#dialog').draggable({
+      handle:".dialog-title"
+  });
+
+  $('#dialog *[name=close]').on('click',function(){
+    $('#mark').hide();
+    $('#dialog').hide();
+  });
+
+
+  $('#addrow').trigger('click');
 
  });
