@@ -64,7 +64,7 @@ var editor = new $.fn.dataTable.Editor( {
         searching: false,
         ordering:  false
     } );
- 
+
     var t = $('#example').DataTable( {
         dom: "Bfrtip",
         paging:false,
@@ -83,7 +83,10 @@ var editor = new $.fn.dataTable.Editor( {
         "columnDefs": [ {
             "searchable": false,
             "orderable": false,
-            "targets": 0
+            "targets": 0,
+            "render" : function ( data, type, row, position ) {
+                      return position.row+1;
+                  },
         },{
           "targets":2,
           "render" : function ( data, type, row ) {
@@ -97,12 +100,6 @@ var editor = new $.fn.dataTable.Editor( {
         } ],
         "order": [[ 1, 'asc' ]]
     } );
-
-    t.on( 'order.dt search.dt', function () {
-        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    } ).draw();
 
 
     $('#addrow').on('click',function(){
